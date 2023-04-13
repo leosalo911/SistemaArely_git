@@ -1,0 +1,117 @@
+{% extends "home/index.html" %}
+{% block encabezado %}
+    <h1>Ventas</h1>
+{% endblock %}
+
+{% block cuerpo %}
+    <form class="w3-container w3-card-4 w3-light-grey">
+        <div>
+
+
+                <label for="fecha">Fecha</label>
+                <input name="nombre" class="w3-input w3-border" type="date">
+                <p></p>
+            </div>
+
+            <div class="w3-row">
+
+                <div class="w3-half w3-container">
+                    <label for="producto">Producto</label>
+                    <input name="producto" class="w3-input w3-border" type="text" placeholder="Producto">
+                </div>
+
+                <div class="w3-half w3-container">
+                    <label for="cantidad">Cantidad</label>
+                    <input name="cantidad" class="w3-input w3-border" type="text" placeholder="Cantidad">
+                </div>
+                <p></p>
+            </div>
+
+            <div class="w3-row w3-container">
+                <div class="w3-third">
+                    <p>
+                        <label for="domicilio">Entrega a domicilio</label>
+
+                        <input name="domicilio" id="si_domi" class="w3-radio" type="radio" value="Y">
+                        <label for="si_domi">Si</label>
+
+                        <input name="domicilio" id="no_domi" class="w3-radio" type="radio" value="N">
+                        <label for="si_domi">No</label>
+                    </p>
+                </div>
+
+                 <div class="w3-half w3-container">
+                     <p>
+                         <label for="direccion">Direccion</label>
+                         <input class="w3-input w3-border" type="text" placeholder="Direccion">
+                     </p>
+                 </div>
+
+
+            </div>
+
+            <div class="w3-row">
+                <div class="w3-half w3-container">
+                    <label for="total">Total</label>
+                    <input name="total" id="id_total" class="w3-input w3-border" type="text" placeholder="Total">
+                </div>
+
+                <div class="w3-half w3-container">
+                    <div class="w3-row">
+                        <label for="estado">Estado</label>
+                    </div>
+                    <div class="w3-row">
+                        <input name="estado" id="pagado" class="w3-radio" type="radio" value="Y">
+                        <label for="pagado">Pagado</label>
+                    </div>
+                    <div class="w3-row">
+                        <input name="estado" id="no_pagado" class="w3-radio" type="radio" value="N">
+                        <label for="no_pagado">No pagado</label>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="w3-row">
+                <div>
+                    <label for="comentarios">Comentarios</label>
+
+                    <br>
+                </div>
+            </div>
+            <div class="w3-row">
+                <p><textarea id="comentarios" name="freeform" rows="4" cols="50" placeholder="Comentarios"></textarea></p>
+            </div>
+        </div>
+    </form>
+
+    <div class="w3-third w3-container">
+        <div class="w3-third">
+            <p><button onclick="document.getElementById('venta_cancel').style.display='block'" class="w3-button w3-section w3-red w3-ripple w3-padding">Cancelar</button></p>
+        </div>
+        <div class="w3-third">
+            <p><button onclick="document.getElementById('venta_ter').style.display='block'" type="submit" class="w3-button w3-section w3-green w3-ripple w3-padding">Terminar</button></p>
+        </div>
+        <div class="w3-third">
+            <p><button type="submit" class="w3-button w3-section w3-blue w3-ripple w3-padding">Seguir con la venta</button></p>
+        </div>
+    </div>
+
+    <div id="venta_cancel" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-red">
+                <span onclick="document.getElementById('venta_cancel').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>La venta se ha cancelado</h2>
+            </header>
+        </div>
+    </div>
+
+    <div id="venta_ter" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('venta_ter').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>Los datos se han registrado exitosamente</h2>
+            </header>
+        </div>
+    </div>
+{% endblock %}

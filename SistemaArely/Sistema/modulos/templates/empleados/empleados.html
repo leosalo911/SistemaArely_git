@@ -1,0 +1,78 @@
+{% extends "home/index.html" %}
+{% block encabezado %}
+    <h1>Empleados</h1>
+{% endblock %}
+/home/leosalo
+{% block cuerpo %}
+    <div class="w3-responsive w3-container">
+        <table class="w3-table-all w3-hoverable" id="tabla_emp">
+            <p><input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar por nombres.." id="myInput" onkeyup="myFunction()"></p>
+            <thead>
+            <tr class="w3-light-grey">
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Fecha de nacimiento</th>
+                <th>Email</th>
+                <th>Credenciales</th>
+                <th class="w3-center">Borrar</th>
+            </tr>
+            </thead>
+            {% for clave,empleado in cdx.empleados.items() %}
+                  <tr>
+                      <td>{{ empleado.nombre }}</td>
+                      <td>{{ empleado.direccion }}</td>
+                      <td>{{ empleado.telefono | replace("H","Hombre") | replace("M","Mujer")}}</td>
+                      <td>{{ empleado.nacimiento }}</td>
+                      <td>{{ empleado.mail }}</td>
+                      <td><a href="#" class="w3-button" onclick="document.getElementById('id02').style.display='block'">Ver credenciales</a></td>
+                      <div id="id02" class="w3-modal">
+                          <div class="w3-modal-content">
+                              <div class="w3-container">
+                                  <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                  <p>Usuario: {{ empleado.usuario }}</p>
+                                  <p>Contraseña: {{ empleado.contrasena}}</p>
+                              </div>
+                          </div>
+                      </div>
+                      <td>
+                          <a href="{{ url_for('Empleados.borrar',id=clave)}}" class="w3-bar-item w3-button" onclick="document.getElementById('id01').style.display='block'"><img src="https://img.icons8.com/emoji/48/null/cross-mark-button-emoji.png"></a>
+                          <div id="id01" class="w3-modal">
+                              <div class="w3-modal-content">
+                                  <div class="w3-container">
+                                      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                      <p>Hola</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+            {% endfor %}
+
+            <script>
+                function myFunction() {
+                    var input, filter, table, tr, td, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("tabla_emp");
+                    tr = table.getElementsByTagName("tr");
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[0];
+                        if (td) {
+                            txtValue = td.textContent || td.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                tr[i].style.display = "";
+                            } else {
+                                tr[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            </script>
+        </table>
+    <p><a href="{{ url_for('Empleados.nuevo')}}"><button class="w3-button w3-green w3-large">Nuevo Empleado</button></a></p>
+    </div>
+{% endblock %}
+
+
+
