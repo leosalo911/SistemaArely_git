@@ -19,34 +19,35 @@
             </tr>
             </thead>
             {% for clave,empleado in cdx.empleados.items() %}
-                  <tr>
-                      <td>{{ empleado.nombre }}</td>
-                      <td>{{ empleado.direccion }}</td>
-                      <td>{{ empleado.telefono | replace("H","Hombre") | replace("M","Mujer")}}</td>
-                      <td>{{ empleado.nacimiento }}</td>
-                      <td>{{ empleado.mail }}</td>
-                      <td><a href="#" class="w3-button" onclick="document.getElementById('id02').style.display='block'">Ver credenciales</a></td>
-                      <div id="id02" class="w3-modal">
-                          <div class="w3-modal-content">
-                              <div class="w3-container">
-                                  <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                  <p>Usuario: {{ empleado.usuario }}</p>
-                                  <p>Contraseña: {{ empleado.contrasena}}</p>
-                              </div>
-                          </div>
-                      </div>
-                      <td>
-                          <a href="{{ url_for('Empleados.borrar',id=clave)}}" class="w3-bar-item w3-button" onclick="document.getElementById('id01').style.display='block'"><img src="https://img.icons8.com/emoji/48/null/cross-mark-button-emoji.png"></a>
-                          <div id="id01" class="w3-modal">
-                              <div class="w3-modal-content">
-                                  <div class="w3-container">
-                                      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                      <p>Hola</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </td>
-                  </tr>
+                <tr>
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.direccion }}</td>
+                    <td>{{ empleado.telefono | replace("H","Hombre") | replace("M","Mujer")}}</td>
+                    <td>{{ empleado.nacimiento }}</td>
+                    <td>{{ empleado.mail }}</td>
+                    <td><a href="#" class="w3-button" onclick="document.getElementById('id02').style.display='block'">Ver credenciales</a></td>
+
+                    <div id="id02" class="w3-modal">
+                        <div class="w3-modal-content">
+                            <div class="w3-container">
+                                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                <p>Usuario: {{ empleado.usuario }}</p>
+                                <p>Contraseña: {{ empleado.contrasena}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <td>
+                        <a href="{{ url_for('Empleados.borrar',id=clave)}}" class="w3-bar-item w3-button" onclick="document.getElementById('id01').style.display='block'"><img src="https://img.icons8.com/emoji/48/null/cross-mark-button-emoji.png"></a>
+                        <div id="id01" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                    <p>Hola</p>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
             {% endfor %}
 
             <script>
