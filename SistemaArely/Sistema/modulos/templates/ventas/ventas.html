@@ -6,82 +6,74 @@
 {% block cuerpo %}
     <form class="w3-container w3-card-4 w3-light-grey">
         <div>
+            <label for="fecha">Fecha</label>
+            <input name="nombre" class="w3-input w3-border" type="date">
+            <p></p>
+        </div>
 
+        <div class="w3-row">
+            <div class="w3-half w3-container">
+                <label for="producto">Producto</label>
+                <input name="producto" class="w3-input w3-border" type="text" placeholder="Producto">
+            </div>
 
-                <label for="fecha">Fecha</label>
-                <input name="nombre" class="w3-input w3-border" type="date">
+            <div class="w3-half w3-container">
+                <label for="cantidad">Cantidad</label>
+                <input name="cantidad" class="w3-input w3-border" type="text" placeholder="Cantidad">
+            </div>
                 <p></p>
+        </div>
+
+        <div class="w3-row w3-container">
+            <div class="w3-third">
+                <p>
+                    <label for="domicilio">Entrega a domicilio</label>
+                    <input name="domicilio" id="si_domi" class="w3-radio" type="radio" value="Y">
+                    <label for="si_domi">Si</label>
+                    <input name="domicilio" id="no_domi" class="w3-radio" type="radio" value="N">
+                    <label for="si_domi">No</label>
+                </p>
             </div>
 
-            <div class="w3-row">
+            <div class="w3-half w3-container">
+                <p>
+                    <label for="direccion">Direccion</label>
+                    <input class="w3-input w3-border" type="text" placeholder="Direccion">
+                </p>
+            </div>
+        </div>
 
-                <div class="w3-half w3-container">
-                    <label for="producto">Producto</label>
-                    <input name="producto" class="w3-input w3-border" type="text" placeholder="Producto">
-                </div>
-
-                <div class="w3-half w3-container">
-                    <label for="cantidad">Cantidad</label>
-                    <input name="cantidad" class="w3-input w3-border" type="text" placeholder="Cantidad">
-                </div>
-                <p></p>
+        <div class="w3-row">
+            <div class="w3-half w3-container">
+                <label for="total">Total</label>
+                <input name="total" id="id_total" class="w3-input w3-border" type="text" placeholder="Total">
             </div>
 
-            <div class="w3-row w3-container">
-                <div class="w3-third">
-                    <p>
-                        <label for="domicilio">Entrega a domicilio</label>
-
-                        <input name="domicilio" id="si_domi" class="w3-radio" type="radio" value="Y">
-                        <label for="si_domi">Si</label>
-
-                        <input name="domicilio" id="no_domi" class="w3-radio" type="radio" value="N">
-                        <label for="si_domi">No</label>
-                    </p>
+            <div class="w3-half w3-container">
+                <div class="w3-row">
+                    <label for="estado">Estado</label>
                 </div>
-
-                 <div class="w3-half w3-container">
-                     <p>
-                         <label for="direccion">Direccion</label>
-                         <input class="w3-input w3-border" type="text" placeholder="Direccion">
-                     </p>
-                 </div>
-
-
-            </div>
-
-            <div class="w3-row">
-                <div class="w3-half w3-container">
-                    <label for="total">Total</label>
-                    <input name="total" id="id_total" class="w3-input w3-border" type="text" placeholder="Total">
+                <div class="w3-row">
+                    <input name="estado" id="pagado" class="w3-radio" type="radio" value="Y">
+                    <label for="pagado">Pagado</label>
                 </div>
-
-                <div class="w3-half w3-container">
-                    <div class="w3-row">
-                        <label for="estado">Estado</label>
-                    </div>
-                    <div class="w3-row">
-                        <input name="estado" id="pagado" class="w3-radio" type="radio" value="Y">
-                        <label for="pagado">Pagado</label>
-                    </div>
-                    <div class="w3-row">
-                        <input name="estado" id="no_pagado" class="w3-radio" type="radio" value="N">
-                        <label for="no_pagado">No pagado</label>
-                    </div>
-                </div>
-                <p></p>
-            </div>
-
-            <div class="w3-row">
-                <div>
-                    <label for="comentarios">Comentarios</label>
-
-                    <br>
+                <div class="w3-row">
+                    <input name="estado" id="no_pagado" class="w3-radio" type="radio" value="N">
+                    <label for="no_pagado">No pagado</label>
                 </div>
             </div>
-            <div class="w3-row">
-                <p><textarea id="comentarios" name="freeform" rows="4" cols="50" placeholder="Comentarios"></textarea></p>
+            <p></p>
+        </div>
+
+        <div class="w3-row">
+            <div>
+                <label for="comentarios">Comentarios</label>
+                <br>
             </div>
+        </div>
+
+        <div class="w3-row">
+            <p><textarea id="comentarios" name="freeform" rows="4" cols="50" placeholder="Comentarios"></textarea></p>
         </div>
     </form>
 

@@ -36,29 +36,7 @@
 
     <div class="w3-container">
         {% block cuerpo %}
-            <button onclick="document.getElementById('login').style.display='block'" class="w3-button w3-green w3-large w3-display-middle">Iniciar sesion</button>
-            <div id="login" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-                    <div class="w3-center"><br>
-                        <span onclick="document.getElementById('login').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
-                        <H2>Inicio de sesion</H2>
-                    </div>
-
-                    <form class="w3-container" action="/action_page.php">
-                        <div class="w3-section">
-                            <label><b>Usuario</b></label>
-                            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Usuario" name="Usuario" required>
-                            <label><b>Contraseña</b></label>
-                            <input class="w3-input w3-border" type="text" placeholder="Contraseña " name="Contraseña" required>
-                            <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Iniciar cesion</button>
-                        </div>
-                    </form>
-                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                        <button onclick="document.getElementById('login').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
-                    </div>
-                </div>
-            </div>
         {% endblock %}
     </div>
 
